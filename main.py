@@ -1,5 +1,3 @@
-# Program Title: Shopping Cart Calculator with Database & Remove Option
-
 print("=== Shopping Cart Calculator ===")
 
 products = {
