@@ -80,3 +80,5 @@ if total_cost > 0:
     print(f"🛒 Total Price: RM{total_cost:.2f}")
 else:
     print("\nNo items were purchased.")
+
+#sjkjdks
