@@ -15,7 +15,7 @@ def show_products():
 
 def show_cart(cart):
     if not cart:
-        print("\n🛒 Cart is empty.")
+        print("\n Cart is empty.")
     else:
         print("\n=== Your Cart ===")
         for idx, item in enumerate(cart, start=1):
@@ -35,7 +35,7 @@ while True:
 
     elif choice.lower() == "remove":
         if not cart:
-            print("❌ Cart is empty, nothing to remove.")
+            print(" Cart is empty, nothing to remove.")
             continue
         try:
             show_cart(cart)
@@ -43,22 +43,22 @@ while True:
             if 1 <= remove_id <= len(cart):
                 removed_item = cart.pop(remove_id - 1)
                 total_cost -= removed_item["cost"]
-                print(f"✅ Removed {removed_item['quantity']} x {removed_item['name']} from cart.")
+                print(f" Removed {removed_item['quantity']} x {removed_item['name']} from cart.")
             else:
-                print("❌ Invalid item number.")
+                print(" Invalid item number.")
         except ValueError:
-            print("❌ Please enter a valid number.")
+            print(" Please enter a valid number.")
         continue
 
     try:
         choice = int(choice)
         if choice not in products:
-            print("❌ Invalid product ID. Try again.")
+            print(" Invalid product ID. Try again.")
             continue
 
         quantity = int(input(f"Enter quantity for {products[choice]['name']}: "))
         if quantity <= 0:
-            print("❌ Quantity must be more than 0.")
+            print(" Quantity must be more than 0.")
             continue
 
         # Calculate cost
@@ -69,16 +69,15 @@ while True:
         cart.append({"name": item["name"], "price": item["price"], "quantity": quantity, "cost": cost})
         total_cost += cost
 
-        print(f"✅ Added {quantity} x {item['name']} (RM{item['price']:.2f} each) = RM{cost:.2f}")
+        print(f" Added {quantity} x {item['name']} (RM{item['price']:.2f} each) = RM{cost:.2f}")
 
     except ValueError:
-        print("❌ Please enter a valid number.")
+        print(" Please enter a valid number.")
 
 if total_cost > 0:
     show_cart(cart)
     print("\n=== Final Total ===")
-    print(f"🛒 Total Price: RM{total_cost:.2f}")
+    print(f" Total Price: RM{total_cost:.2f}")
 else:
     print("\nNo items were purchased.")
 
-#sjkjdks
